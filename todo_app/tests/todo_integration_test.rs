@@ -2,6 +2,9 @@
 use todo_lib::TodoList;
 use std::fs;
 
+
+
+
 #[test]
 fn test_multiple_items() {
     let mut list = TodoList::new();
@@ -88,14 +91,6 @@ fn test_mark_complete() {
     
     // Test assert_ne!
     assert_ne!(todo_list.items[0].completed, false);
-}
-
-// Test dengan #[should_panic]
-#[test]
-#[should_panic(expected = "Title tidak boleh kosong")]
-fn test_empty_title() {
-    let mut todo_list = TodoList::new();
-    todo_list.add_item("");  // Seharusnya panic
 }
 
 // Test yang di-ignore

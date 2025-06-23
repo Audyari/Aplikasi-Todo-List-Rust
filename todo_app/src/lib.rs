@@ -33,6 +33,15 @@ impl TodoList {
         }
     }
 
+    // Di dalam impl TodoList di lib.rs
+    pub fn toggle_complete(&mut self, index: usize) {
+        if let Some(item) = self.items.get_mut(index) {
+            item.completed = !item.completed;
+        } else {
+            panic!("Indeks tidak valid");
+        }
+    }
+
     pub fn add_item(&mut self, title: &str) {
         if title.trim().is_empty() {
             panic!("Title tidak boleh kosong");
@@ -116,4 +125,45 @@ impl TodoList {
 
         Ok(list)
     }
+}
+
+
+
+// Test untuk TodoItem
+#[test]
+fn test_todo_item_creation() {
+    let item = TodoItem::new(1, "Belajar Rust");
+    assert_eq!(item.title, "Belajar Rust");
+    assert!(!item.completed);
+}
+
+// Test untuk operasi dasar TodoList
+#[test]
+fn test_add_remove_items() {
+    let mut list = TodoList::new();
+    list.add_item("Test");
+    assert!(!list.items.is_empty());
+    list.remove_item(0);
+    assert!(list.items.is_empty());
+}
+
+// Test untuk toggle complete
+#[test]
+fn test_toggle_complete() {
+    let mut list = TodoList::new();
+    list.add_item("Test");
+    list.toggle_complete(0);
+    assert!(list.items[0].completed);
+    list.toggle_complete(0);
+    assert!(!list.items[0].completed);
+}
+
+// Test untuk validasi input
+#[test]
+fn test_invalid_index() {
+    let mut list = TodoList::new();
+    let result = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
+        list.toggle_complete(999);
+    }));
+    assert!(result.is_err());
 }
