@@ -1,0 +1,56 @@
+# File-file yang dihasilkan oleh Cargo
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# File-file yang dihasilkan oleh IDE dan editor
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# File-file log
+*.log
+
+# File-file environment
+.env
+
+# File-file binary tambahan
+*.exe
+*.exe.*
+*.dll
+*.so
+*.dylib
+
+# File-file sementara
+*.tmp
+*.bak
+*.swp
+*~
+
+# File-file hasil testing
+test_todos.csv
+file_tidak_ada_12345.csv
+
+# File-file build untuk rilis
+**/target/release/
+**/target/debug/
+
+# File-file sistem operasi
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# File-file Rust
+*.pdb
+*.d
+
+# File-file yang dihasilkan oleh cargo doc
+/doc/
+
+# File-file konfigurasi lokal
+.idea/
+.vscode/
+*.code-workspace

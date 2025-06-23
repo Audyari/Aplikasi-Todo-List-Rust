@@ -27,6 +27,14 @@ Membangun aplikasi Todo List sederhana menggunakan Rust dengan fokus utama pada 
  - `#[ignore]` - untuk skipping tests bila tidak ingin dijalankan
  - `  Test Result` - untuk testing error handling
 
+## Task 2: Setup Documentation
+
+### 2.1 Setup Documentation
+- [ ] Jalankan `cargo doc --open`
+- [ ] Pelajari `#[doc]` attribute
+- [ ] Setup `docs/` directory untuk documentation
+- [ ] Understand documentation vs source code differences
+- [ ] Jalankan specific documentation dengan `cargo doc -- --nocapture`
 
 ### 2.2 Test Organization
 - [ ] Pelajari `#[cfg(test)]` attribute

@@ -3,4 +3,12 @@ name = "todo_app"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+name = "todo_lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "todo_app"
+path = "src/main.rs"
+
 [dependencies]
